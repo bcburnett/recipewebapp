@@ -1,0 +1,115 @@
+
+:root{
+  box-sizing: border-box;
+  --primary-light: #555;
+  --highlight-color: rgb(116, 13, 13);
+  --primary-color:  #999;
+  --background-color:#333;
+  --br: 10px;
+  --calc-color:var(--primary-color);
+  --wrapper-color:transparent;
+  --todo-color:var(--primary-color);
+  --header-img:url("");
+  --float-button: inline-block;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: sans-serif;
+  height:100vh;
+  margin: 0;
+  padding:0;
+  font-size: 1rem;
+  color:var(--primary-color);
+  background-color: var(--background-color);
+  overflow-x: hidden;
+}
+
+
+.container {
+  position:relative;
+  top:0;
+  left:0;
+  width:100%;
+  display:grid;
+<<<<<<< HEAD
+  grid-template-columns: .12fr 1fr;
+=======
+  grid-template-columns: 500px 1fr;
+>>>>>>> 606361b... added recipes
+  justify-content: center;
+  grid-template-areas:
+  "u f";
+  grid-gap: 15px;
+  margin:0;
+  background-color: var(--background-color);
+  background-image: url('');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: multiply;
+  text-align: center;
+  padding:100px 0 113px 0;
+}
+
+bcb-navbar{
+  width:100%;
+  position: fixed;
+  top:0px;
+  z-index: 10;
+  text-align:center;
+  transition: top 200ms linear;
+}
+
+.content{
+  grid-area: f;
+  width:65vw;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 0px;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.hide{
+  opacity:0;
+}
+
+.chatdiv{
+  grid-area: c;
+}
+
+.usercontainer {
+  grid-area: u;
+}
+
+.userarea{
+  width:400px;
+  border: 1px solid black;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  margin: 0 auto;
+}
+
+.hidden{
+  top: -175px;
+}
+
+@media (max-width: 890px) {
+  .container {
+    grid-template-areas:
+    "u"
+    "f"
+    ;
+    grid-template-rows:1fr min-content ;
+    grid-template-columns:100%;
+  }
+
+
+
+}
