@@ -38,7 +38,7 @@
     "helmet": "^3.16.0",
     "images": "^2.1.8",
     "mongodb": "^3.1.13",
-    "mongoose": "^5.4.1",
+    "mongoose": "^5.7.5",
     "mongoose-paginate": "^5.0.3",
     "node-logger": "^0.0.1",
     "passport": "^0.4.0",
