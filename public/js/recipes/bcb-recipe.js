@@ -73,6 +73,10 @@ export class BcbRecipe extends connect(store)(LitElement) {
     if (a !== 'none') this.shadowRoot.getElementById('srch' + a).classList.add('active');
   }
 
+  newRecipe() {
+    ps.newRecipe();
+  }
+
   render() {
     return html`
         <style>
