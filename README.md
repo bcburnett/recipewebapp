@@ -22,7 +22,7 @@ login form
 
 pantry database
 
-recipe database based on the mit 1000000 recipe project. http://pic2recipe.csail.mit.edu/
+recipe database based on the mit recipe project. http://pic2recipe.csail.mit.edu/
 
 real-time chat <todo>
 
