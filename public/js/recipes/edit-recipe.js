@@ -32,7 +32,6 @@ export class BcbEditRecipe extends connect(store)(LitElement) {
 
   deleteRecipe(id) {
     ps.deleteRecipe(id);
-    this.doSearch();
   }
 
   makeNonEditable(div) {
@@ -387,7 +386,10 @@ export class BcbEditRecipe extends connect(store)(LitElement) {
       <button class="urlbutton" @click="${() => this.updateArray('NEWCOMMENT', 'NEWCOMMENT', 0)}">Add Comment</button>
 <br />
 <br />
-    <button class="urlbutton red" @click="${() => this.deleteRecipe(this.editRecipe._id)}">Delete This Recipe</button>
+    <button class="urlbutton red" @click="${() => {
+      ps.deleteRecipe(this.editRecipe._id);
+      
+      }}"> Delete This Recipe </button>
     </div>
     `;
   }

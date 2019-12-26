@@ -28,7 +28,7 @@ http.get('/', function(req, res) {
   res.redirect('https:443//' + req.headers.host + req.url );
 });
 http.use(express.static('public'));
-http.listen(80);
+http.listen(8080);
 
 mongoose.set('useFindAndModify', false);
 
@@ -174,6 +174,7 @@ io.on('connection', async (socket) => {
 
   socket.on('deleteRecipe', async (id)=>{
     const result = await DB.deleteRecipe(id);
+    console.log('delete recipe', id, result)
     socket.emit('updateRecipe', {});
   });
 

@@ -30,6 +30,7 @@ export class BcbRecipe extends connect(store)(LitElement) {
 
   constructor() {
     super();
+    this.showrecipe = 'hide';
     this.searchResults = [];
     this.CurrentRecipe = '';
     this.page = 1;
@@ -39,6 +40,7 @@ export class BcbRecipe extends connect(store)(LitElement) {
    */
   firstUpdated() {
     this.searchInput = this.shadowRoot.getElementById('search');
+    this.recipe = this.shadowRoot.getElementById('edit-recipe')
   }
 
   doSearch() {
@@ -89,7 +91,12 @@ export class BcbRecipe extends connect(store)(LitElement) {
     .active{
       background:rgba(255,255,255,.25);
     }
-
+    .display{
+      display:block;
+    }
+    .hide{
+      display:none;
+    }
     </style>
 <div>
 <br />
@@ -111,7 +118,7 @@ export class BcbRecipe extends connect(store)(LitElement) {
 </div>
 </div>
 <div >
-<edit-recipe></edit-recipe>
+<edit-recipe id="edit-recipe"></edit-recipe>
 </div>
     `;
   }
@@ -122,6 +129,10 @@ export class BcbRecipe extends connect(store)(LitElement) {
     if (this.searchResults !== app.searchResults) {
       this.searchResults = app.searchResults;
     }
+    this.recipe.classList.remove('hide')
+    this.recipe.classList.remove('display')
+    this.recipe.classList.add(Object.keys(app.editRecipe).length == 0?'hide':'display');
+    console.log (this.showrecipe)
 
   }
 }
