@@ -4,6 +4,7 @@ import {LitElement, html} from '../node_modules/lit-element/lit-element.js';
 import {Styles} from './bcb-feed-css.js';
 import './bcb-post.js';
 import './bcb-post-form.js'
+import './bcb-video.js'
 export class BcbFeed extends LitElement {
   static get properties() {
     return {
@@ -82,6 +83,7 @@ export class BcbFeed extends LitElement {
   <h2>Posts</h2>
     ${posts}
     <bcb-post-form></bcb-post-form>
+    <bcb-video></bcb-video>
   </div>
     `;
   }
