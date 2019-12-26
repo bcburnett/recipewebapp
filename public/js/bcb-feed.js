@@ -3,6 +3,7 @@
 import {LitElement, html} from '../node_modules/lit-element/lit-element.js';
 import {Styles} from './bcb-feed-css.js';
 import './bcb-post.js';
+import './bcb-post-form.js'
 export class BcbFeed extends LitElement {
   static get properties() {
     return {
@@ -80,6 +81,7 @@ export class BcbFeed extends LitElement {
   <div>
   <h2>Posts</h2>
     ${posts}
+    <bcb-post-form></bcb-post-form>
   </div>
     `;
   }

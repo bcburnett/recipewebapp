@@ -279,6 +279,7 @@ export class BcbEditRecipe extends connect(store)(LitElement) {
         color:white;
          border:none;
          background: transparent;
+         text-align:left;
     }
     textarea{ 
       width:100%;
@@ -332,6 +333,7 @@ export class BcbEditRecipe extends connect(store)(LitElement) {
     <div style="
       display:flex;
       flex-direction:row;
+      justify-content: space-evenly;
     ">
 
       <div style=" 

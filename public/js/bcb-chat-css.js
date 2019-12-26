@@ -17,7 +17,7 @@ input{
 }
 
 .chatDiv{
-  width:350px;
+  width:95%;
   height: 100px;
   overflow:auto;
   border: 1px solid black;
@@ -26,7 +26,8 @@ input{
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  margin: 10px auto;
+  margin: auto;
+  margin-top:75px;
   text-align:left;
   padding: 10px;
 

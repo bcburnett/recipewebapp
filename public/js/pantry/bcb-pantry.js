@@ -45,9 +45,11 @@ export class BcbPantry extends connect(store)(LitElement) {
 
   render() {
     return html`
+    <div style="margin:auto;">
 <bcb-add-item style="display:inline-block;border: 1px solid brown;text-align:left;padding:10px;margin-right:25px;"></bcb-add-item>
 <bcb-edit-item style="display:inline-block;border: 1px solid brown;text-align:left;padding:10px;margin-bottom:25px;"></bcb-edit-item>
 <bcb-item-grid style="margin-top:25px;"></bcb-item-grid>
+</div>
     `;
   }
 

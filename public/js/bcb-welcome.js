@@ -45,19 +45,7 @@ export class BcbWelcome extends connect(store)(LitElement) {
       font-size:.6rem;
     }
   </style>
-  <img src="${this.profile.image}" style="
-  width:75px;
-  height: 75px;
-  border-radius:50%;
-  margin-bottom: 0;
-  margin-top: 10px;
-  ">
-  <h2>Welcome <br> ${this.user}</h2>
-  <p>${this.profile.facebook}</p>
-  <p>${this.profile.twitter}</p>
-  <p>${this.profile.hobbies}</p>
-  
-    `;
+     `;
   }
 }
 customElements.define('bcb-welcome', BcbWelcome);

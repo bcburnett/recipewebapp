@@ -36,7 +36,6 @@ export class BcbChat extends LitElement {
     return html`
   ${Styles}
   <div>
-    <h2>Chat</h2>
     <div class="chatDivWrapper">
       <div  class="chatDiv" id="chatDiv">
         ${this.chat}

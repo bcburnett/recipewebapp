@@ -106,11 +106,7 @@ export class BcbRecipe extends connect(store)(LitElement) {
 `)}
 </div>
 </div>
-<div style="
-  display:grid;
-  grid-template-columns:1fr, 1fr;
-  justify-content:space-evenly;
-  text-align:left">
+<div >
 <edit-recipe></edit-recipe>
 </div>
     `;
