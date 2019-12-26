@@ -1,22 +1,23 @@
 /* eslint-disable one-var */
 // constant declarations
-const express = require('express'),
-  fs=require('fs'),
-  mongoose = require('mongoose'),
-  passport = require('passport'),
-  flash = require('connect-flash'),
-  mysession = require('express-session'),
-  MongoDBStore = require('connect-mongodb-session')(require('express-session')),
+const express = require('express'), //express router
+  fs=require('fs'),  // we need to read our ssh keys on disk
+  mongoose = require('mongoose'), //our data is stored in a mongo database
+  passport = require('passport'), // secure login
+  flash = require('connect-flash'), // error messages
+  mysession = require('express-session'), //sessions: we use passport over express sessions over socket.io and persisted to the mongodb
+  MongoDBStore = require('connect-mongodb-session')(require('express-session')), // persists express sessions to the mongodb
   DB= new (require('./js/data'))(), // Abstracted mongoose functions
-  Image = new (require('./js/image'))(),
-  // abstracted image manipulation functions
-  socket = require('socket.io'),
-  helmet = require('helmet'),
-  https = require('https'),
-  uuidv1 = require('uuid/v1'),
-  app = express();
+  Image = new (require('./js/image'))(), // abstracted image manipulation functions
+  socket = require('socket.io'), //real time communications
+  helmet = require('helmet'), // header security
+  https = require('https'), // https server
+  uuidv1 = require('uuid/v1'), // basic uid
+  app = express(); // create our app
+
 // eslint-disable-next-line max-len
 app.use(require('connect-logger')({immediate: true, format: `%date %status %method %url (%route - %time)`}));
+//log connections and requests
 
 // set up plain http server for redirect to https
 const http = express();
@@ -27,7 +28,7 @@ http.get('/', function(req, res) {
   res.redirect('https:443//' + req.headers.host + req.url );
 });
 http.use(express.static('public'));
-http.listen(8080);
+http.listen(80);
 
 mongoose.set('useFindAndModify', false);
 
