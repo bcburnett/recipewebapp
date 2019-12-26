@@ -64,7 +64,7 @@ Thanks to https://github.com/bradtraversy/node_passport_login (have to rename us
 
 tutorial for the package https://www.youtube.com/watch?v=6FOq4cUdH8k&t=2s By Traversy Media
 
-Demo site: https://newlondonweb.con/recipes
+Demo site: http://newlondonweb.con/recipes
 
 
 
