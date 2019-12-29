@@ -47,7 +47,7 @@ export class BcbEditRecipe extends connect(store)(LitElement) {
   }
 
   updateArray(action, div, i) {
-    const obj = this.editRecipe;
+    const obj = {...this.editRecipe};
 
     switch (action) {
       case 'DELETEINSTRUCTION':
@@ -272,25 +272,25 @@ export class BcbEditRecipe extends connect(store)(LitElement) {
 
 
     return html`
-    <style>
+<style>
+:host {
+  color: #666;
+}
     .ingredient{ 
       width:100%;
-        color:white;
          border:none;
          background: transparent;
          text-align:left;
     }
     textarea{ 
       width:100%;
-        color:white;
          border:none;
          background: transparent;
          height:7vh;
     }
     .urlbutton{
       width:100%;
-      background: transparent;
-      color: white;
+      background: #aaa;
       margin-top:-10px;
     }
     .active{
@@ -327,7 +327,7 @@ export class BcbEditRecipe extends connect(store)(LitElement) {
     text-align:center;
     margin-top:15px;
   }
-  </style>
+</style>
       ${title}
     <div style="
       display:flex;
@@ -384,12 +384,9 @@ export class BcbEditRecipe extends connect(store)(LitElement) {
       <br>
       <br>
       <button class="urlbutton" @click="${() => this.updateArray('NEWCOMMENT', 'NEWCOMMENT', 0)}">Add Comment</button>
-<br />
-<br />
-    <button class="urlbutton red" @click="${() => {
-      ps.deleteRecipe(this.editRecipe._id);
-      
-      }}"> Delete This Recipe </button>
+      <br />
+      <br />
+      <button class="urlbutton red" @click="${() => {this.deleteRecipe(this.editRecipe._id)}}"> Delete This Recipe </button>
     </div>
     `;
   }

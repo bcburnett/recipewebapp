@@ -27,7 +27,6 @@ export class Ps {
   }
 
   deleteRecipe(id) {
-    console.log('delete recipe', id)
     SOCKET.emit('deleteRecipe', id);
   }
 

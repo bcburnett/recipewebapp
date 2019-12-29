@@ -82,10 +82,13 @@ export class BcbRecipe extends connect(store)(LitElement) {
   render() {
     return html`
         <style>
+        :host{
+          color: #666;
+        }
     .urlbutton{
       width:100%;
       background: transparent;
-      color: white;
+      color: #aaa;
       margin-top:-10px;
     }
     .active{
@@ -110,7 +113,7 @@ export class BcbRecipe extends connect(store)(LitElement) {
 <button class="urlbutton" style="background:green" @click="${() => this.newRecipe()}">Add a New Recipe</button>
 <div  style="cursor:pointer;">
   ${this.searchResults.map((r, i) => html`
-    <h3 id="${'srch' + i}"style="color:white;margin:10px;" @click="${() => {
+    <h3 id="${'srch' + i}"style="margin:10px;" @click="${() => {
         ps.fetchRecipe(r._id);
         this.setActive(i);
       }}" > ${r.title} </h3>
@@ -132,7 +135,6 @@ export class BcbRecipe extends connect(store)(LitElement) {
     this.recipe.classList.remove('hide')
     this.recipe.classList.remove('display')
     this.recipe.classList.add(Object.keys(app.editRecipe).length == 0?'hide':'display');
-    console.log (this.showrecipe)
 
   }
 }
