@@ -14,7 +14,12 @@ module.exports = class db {
     this.PantryItem = require('../models/pantryItem.model');
     this.Recipes = require('../models/recipeModel');
   }
-
+  convertFraction (string) {
+    const ary = string.split(' ')
+    console.log(ary[0])
+    if([...ary[0]].every(c => '0123456789.+/'.includes(c))) return eval(ary[0])
+    return -1;
+};
   async addPantryItem(item) {
     const myitem = this.PantryItem(item);
     const result = await myitem.save()
@@ -87,6 +92,7 @@ module.exports = class db {
 
   async updateRecipe(item) {
     console.log(item);
+    item.quantity= item.quantity.map(i=>this.convertFraction(i))
     const result = await this.Recipes
       .findOneAndUpdate({ '_id': item._id }, item, { new: true })
       .then((res) => res)// resolve the promise
